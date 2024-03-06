@@ -11,25 +11,32 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
+            <div class="mb-3">
+               
+                <div class='e-btn-group custom-rbt-group'>
+                    <input type="radio" id="radioleft" name="Type" value="Expence" checked="@(@Model.Type=="Expence")" />
+                    <label class="e-btn" for="radioleft">Expence</label>
+                    <input type="radio" id="radiomiddle" name="Type" value="Income" checked="@(@Model.Type=="Income")" />
+                    <label class="e-btn" for="radiomiddle">Income</label>@*
+                    <input type="radio" id="radioright" name="align" value="right" />
+                    <label class="e-btn" for="radioright">Right</label> *@
+                </div>
+                @* <input type="submit" value="Create" class="btn btn-primary" /> *@
+            </div>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
+             <div class="mb-3">               
+                <ejs-textbox id="Title" name="Title" ejs-for="@Model.Title" placeholder="Title" floatLabelType="Auto"></ejs-textbox>
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Icon" class="control-label"></label>
-                <input asp-for="Icon" class="form-control" />
+            <div class="mb-3">
+                <ejs-textbox id="Icon" name="Icon" ejs-for="@Model.Icon" placeholder="Icon" floatLabelType="Auto"></ejs-textbox>
                 <span asp-validation-for="Icon" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Type" class="control-label"></label>
-                <input asp-for="Type" class="form-control" />
+            <div class="mb-3">
+                <ejs-textbox id="Type" name="Type" ejs-for="@Model.Type" placeholder="Type" floatLabelType="Auto"></ejs-textbox>
                 <span asp-validation-for="Type" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+            
         </form>
     </div>
 </div>
