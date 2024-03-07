@@ -12,6 +12,8 @@
 
 
         <form asp-action="AddorEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" name="CategoryId" value="@Model.CategoryId" />
             <div class="mb-3">               
                 <div class='e-btn-group custom-rbt-group'>
                     <input type="radio" id="radioleft" name="Type" value="Expence" checked="@(@Model.Type=="Expence")" />
@@ -43,17 +45,16 @@
     </div>
 
     <div class="col-md-5">
-        @* <div class="d-flex justify-content-center align"></div> *@
-        <div class="widget h-100 d-flex justify-content-center align-items-center">
+        <div class="widget h-100 d-flex justify-content-center align-items-center" style="background-color:#212b36;">
             <i class="fa-solid fa-shapes fa-2xl"></i>
         </div>
     </div>
 
 </div>
 
-<div>
+@* <div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div> *@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
